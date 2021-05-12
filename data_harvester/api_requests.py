@@ -1,16 +1,18 @@
 import requests as req
 
+hard_link = "https://midgard.thorchain.info/v2"
+
 def pool_info(asset, stats):
 	if stats is False:
-		data = req.get("https://midgard.thorchain.info/v2/pool/{}".format(asset)).json()
+		data = req.get("{}/pool/{}".format(hard_link, asset)).json()
 	else:
-		data = req.get("https://midgard.thorchain.info/v2/pool/{}/stats?period={}".format(asset, stats)).json()
+		data = req.get("{}/pool/{}/stats?period={}".format(hard_link, asset, stats)).json()
 
 def pool_history(asset, interval, count):
 	if (interval and count) is None:
-		data = req.get("https://midgard.thorchain.info/v2/history/depths/{}".format(asset)).json()
+		data = req.get("{}/history/depths/{}".format(hard_link, asset)).json()
 	else:
-		data = req.get("https://midgard.thorchain.info/v2/history/depths/{}?interval={}&count={}".format(asset, interval, count)).json()
+		data = req.get("{}/history/depths/{}?interval={}&count={}".format(hard_link, asset, interval, count)).json()
 
 	depth = []
 	price = []
@@ -29,7 +31,7 @@ def pool_history(asset, interval, count):
 
 
 def get_pools():
-	return req.get("https://midgard.thorchain.info/v2/pools").json()
+	return req.get("{}/pools".format(hard_link)).json()
 
 
 print(pool_history("BNB.BNB", "day", "5"))
