@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from data_harvester import api_requests
 app = Flask(__name__)
 
 @app.route('/')

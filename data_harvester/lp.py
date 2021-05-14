@@ -22,3 +22,6 @@ test = {
     "data": [49, 47, 51, 48, 45, 44, 40, 42, 47, 45]
   }
 }
+
+def test_function():
+	return test
