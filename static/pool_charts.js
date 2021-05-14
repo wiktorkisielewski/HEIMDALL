@@ -31,6 +31,7 @@ var chart_data = {
 };
 
 
+
 var options = {
   maintainAspectRatio: false,
   scales: {
