@@ -10,8 +10,22 @@
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-  <p>test bnb.bnb chart</p>
-  <canvas id="bnb.bnb_test_chart" width="200" height="450"></canvas>
+  <div>
+    <p>test bnb.bnb chart</p>
+    <canvas id="bnb.bnb_test_chart" width="200" height="450"></canvas>
+  </div>
+  <div>
+    <select name="pools" method="GET" action="/">
+      {% for pool in pools %}
+      <option value= "{{pool}}" SELECTED>{{pool}}</option>"
+      {% endfor %}
+    </select>
+    <select name="interval" method="GET" action="/">
+      {% for interval in intervals %}
+      <option value= "{{interval}}" SELECTED>{{interval}}</option>"
+      {% endfor %}
+    </select>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="/static/pool_charts.js"></script>

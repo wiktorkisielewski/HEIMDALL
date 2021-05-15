@@ -1,10 +1,13 @@
 from flask import Flask, render_template
-from data_harvester import api_requests
-app = Flask(__name__)
+from data_harvester import pools
 
-@app.route('/')
-def main_page():
-	return render_template('index.html')
+app = Flask(__name__)
+time_intervals = ['5min', 'hour', 'day', 'week', 'month', 'year']
+
+@app.route('/', methods=['GET'])
+def main():
+    pool_list = pools.get_pools()
+    return render_template('index.html', pools=pool_list, intervals=time_intervals)
 
 if __name__ == '__main__':
-   app.run()
+   app.run(debug=True)
