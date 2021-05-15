@@ -34,4 +34,4 @@ def get_pools():
 	return req.get("{}/pools".format(midgard_link)).json()
 
 
-print(pool_history("BNB.BNB", "day", "5"))
+#print(pool_history("BNB.BNB", "day", "5"))
