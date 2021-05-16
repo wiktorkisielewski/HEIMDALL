@@ -27,6 +27,7 @@ def pool_history(asset, interval, count):
 		rune_depth.append(i['runeDepth'])
 	return depth, price, price_usd, liquidity_units, rune_depth
 
+
 def swaps_history(asset, interval, count):
 	if (asset and interval and count) is None:
 		data = req.get("{}/history/swaps".format(midgard_link)).json()
