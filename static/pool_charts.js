@@ -54,8 +54,24 @@ var options = {
     },
 };
 
-function plot_it(ticker) {
-  console.log(ticker)
+function py_test(input) {
+  var jqXHR = $.ajax({
+            type: "POST",
+            url: "/py_test",
+            async: false,
+            data: { mydata: input }
+        });
+  return jqXHR.responseText;
+}
+
+$('#py_test').click(function() {
+  data = 'BNB.BNB';
+  result = py_test(data);
+  console.log('py_test ok' + data)
+});
+
+
+function plot_it() {
   Chart.Line('test_chart', {
   options: options,
   data: chart_data

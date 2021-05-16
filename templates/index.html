@@ -13,10 +13,10 @@
   <div>
     <p>test chart</p>
     <canvas id="test_chart" width="200" height="450"></canvas>
-    <button onclick="plot_it(document.getElementById('pool_tickers').value)">TEST</button>
+    <button onclick="plot_it()" id="py_test">TEST</button>
   </div>
   <div> 
-    <form action="{{ url_for('handle_data') }}" method="post">
+    <form method="post">
       <select name="data.pools" method="GET" id="pool_tickers">
         {% for pool in data.pools %}
         <option  value="{{pool}}">{{pool}}</option>"
@@ -28,7 +28,6 @@
         {% endfor %}
       </select>
       <input type="submit">
-
     </form>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -10,11 +10,12 @@ def main():
     data ={'pools': pools.get_pools(), 'intervals': time_intervals}
     return render_template('index.html', data=data)
 
-@app.route('/handle_data', methods=['POST'])
-def handle_data():
-    projectpath = request.form['data.pool']
-    return render_template('index.html', pools=pool_list, intervals=time_intervals)
+@app.route('/py_test', methods=['GET', 'POST'])
+def py_test():
+	return "420x69"
+	
+
 
 if __name__ == '__main__':
-   app.run(debug=False)
+   app.run(debug=True)
 
