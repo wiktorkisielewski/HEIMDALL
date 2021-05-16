@@ -10,21 +10,21 @@
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-  <button onclick="plot_it(data.dataset)">TEST</button>
   <div>
-    <p>test bnb.bnb chart</p>
-    <canvas id="bnb.bnb_test_chart" width="200" height="450"></canvas>
+    <p>test chart</p>
+    <canvas id="test_chart" width="200" height="450"></canvas>
+    <button onclick="plot_it(document.getElementById('pool_tickers').value)">TEST</button>
   </div>
   <div> 
     <form action="{{ url_for('handle_data') }}" method="post">
-      <select name="data.pools" method="GET">
+      <select name="data.pools" method="GET" id="pool_tickers">
         {% for pool in data.pools %}
-        <option value= "{{pool}}" SELECTED>{{pool}}</option>"
+        <option  value="{{pool}}">{{pool}}</option>"
         {% endfor %}
       </select>
       <select name="data.intervals" method="GET">
         {% for interval in data.intervals %}
-        <option value= "{{interval}}" SELECTED>{{interval}}</option>"
+        <option value="{{interval}}" SELECTED>{{interval}}</option>"
         {% endfor %}
       </select>
       <input type="submit">
@@ -33,47 +33,5 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="/static/pool_charts.js"></script>
-  <script type="text/javascript">
-    #"{{ url_for('handle_data') }}"flaskFUNCTIONhere
-  
-    var chart_data = {
-      labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      datasets: [{
-        label: "Pool Depth",
-        backgroundColor: "#54FFD820",
-        borderColor: "#54FFD820",
-        borderWidth: 2,
-        hoverBackgroundColor: "#54FFD820",
-        hoverBorderColor: "#54FFD820",
-        data: [49, 47, 51, 48, 45, 44, 40, 42, 47, 45],
-      },
-      {
-        label: "Price",
-        backgroundColor: "#54FFD840",
-        borderColor: "#54FFD840",
-        borderWidth: 2,
-        hoverBackgroundColor: "#54FFD840",
-        hoverBorderColor: "#54FFD840",
-        data: [11, 9, 7, 10, 9, 12, 16, 15, 18, 22],
-      },
-      {
-        label: "Rune Depth",
-        backgroundColor: "#54FFD860",
-        borderColor: "#54FFD860",
-        borderWidth: 2,
-        hoverBackgroundColor: "#54FFD860",
-        hoverBorderColor: "#54FFD860",
-        data: [32, 35, 33, 31, 29, 34, 35, 37, 36, 34],
-      }
-      ]
-    };
-    function plot_it(chart_data) {
-      console.log('1')
-      Chart.Line('bnb.bnb_test_chart', {
-      options: options,
-      data: chart_data
-    });
-    }
-  </script>
 </body>
 </html>

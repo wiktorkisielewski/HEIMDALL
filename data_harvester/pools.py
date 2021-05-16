@@ -1,4 +1,4 @@
-import api_requests
+from data_harvester import api_requests
 
 def get_pools():
 	pools = []

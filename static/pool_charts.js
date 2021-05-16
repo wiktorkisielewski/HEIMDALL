@@ -54,8 +54,9 @@ var options = {
     },
 };
 
-function plot_it(dataset) {
-  Chart.Line('bnb.bnb_test_chart', {
+function plot_it(ticker) {
+  console.log(ticker)
+  Chart.Line('test_chart', {
   options: options,
   data: chart_data
 });
