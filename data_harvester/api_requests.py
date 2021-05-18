@@ -25,7 +25,8 @@ def pool_history(asset, interval, count):
 		price_usd.append(i['assetPriceUSD'])
 		liquidity_units.append(i['liquidityUnits'])
 		rune_depth.append(i['runeDepth'])
-	return depth, price, price_usd, liquidity_units, rune_depth
+	data_output = [depth, price, price_usd, liquidity_units, rune_depth]
+	return data_output
 
 
 def swaps_history(asset, interval, count):

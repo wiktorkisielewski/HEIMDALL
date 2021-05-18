@@ -9,7 +9,9 @@
   <meta name="author" content="Wiktor Kisielewski">
   <link rel="stylesheet" href="/static/style.css">
 </head>
-<body onload="plot_it({ data : 'dataset' })">
+
+<body onload="plot_it({{data.dataset}})">
+
   <canvas id="test_chart" width="200" height="450"></canvas>
   <div>
     <a href="/py_test">

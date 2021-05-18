@@ -1,10 +1,12 @@
 from flask import Flask, render_template, request
-from data_harvester import pools
+from data_harvester import pools, api_requests
 import requests
+import json
 
-app = Flask(__name__)
+app = Flask(__name__) 
 
 time_intervals = ['5min', 'hour', 'day', 'week', 'month', 'year']
+
 dataset = {
   'labels': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   'datasets': [{
@@ -15,6 +17,7 @@ dataset = {
     'hoverBackgroundColor': "#54FFD820",
     'hoverBorderColor': "#54FFD820",
     'data': [49, 47, 51, 48, 45, 44, 40, 42, 47, 45],
+    #api_requests.pool_history('BNB.BNB', 'day', '10')[0]
   },
   {
     'label': "Price",
@@ -35,7 +38,8 @@ dataset = {
     'data': [32, 35, 33, 31, 29, 34, 35, 37, 36, 34],
   }
   ]
-};
+}
+
 
 @app.route('/', methods=['GET'])
 def main():
