@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 time_intervals = ['5min', 'hour', 'day', 'week', 'month', 'year']
 
+
 dataset = {
   'labels': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   'datasets': [{
@@ -16,8 +17,7 @@ dataset = {
     'borderWidth': 2,
     'hoverBackgroundColor': "#54FFD820",
     'hoverBorderColor': "#54FFD820",
-    'data': [49, 47, 51, 48, 45, 44, 40, 42, 47, 45],
-    #api_requests.pool_history('BNB.BNB', 'day', '10')[0]
+    'data': api_requests.pool_history('BNB.BNB', 'day', '10')[0],
   },
   {
     'label': "Price",
@@ -26,7 +26,7 @@ dataset = {
     'borderWidth': 2,
     'hoverBackgroundColor': "#54FFD840",
     'hoverBorderColor': "#54FFD840",
-    'data': [11, 9, 7, 10, 9, 12, 16, 15, 18, 22],
+    'data': api_requests.pool_history('BNB.BNB', 'day', '10')[1],
   },
   {
     'label': "Rune Depth",
@@ -35,7 +35,7 @@ dataset = {
     'borderWidth': 2,
     'hoverBackgroundColor': "#54FFD860",
     'hoverBorderColor': "#54FFD860",
-    'data': [32, 35, 33, 31, 29, 34, 35, 37, 36, 34],
+    'data': api_requests.pool_history('BNB.BNB', 'day', '10')[2],
   }
   ]
 }

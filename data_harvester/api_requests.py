@@ -20,11 +20,11 @@ def pool_history(asset, interval, count):
 	liquidity_units = []
 	rune_depth = []
 	for i in data['intervals']:
-		depth.append(i['assetDepth'])
-		price.append(i['assetPrice'])
-		price_usd.append(i['assetPriceUSD'])
-		liquidity_units.append(i['liquidityUnits'])
-		rune_depth.append(i['runeDepth'])
+		depth.append(float(i['assetDepth']))
+		price.append(float(i['assetPrice']))
+		price_usd.append(float(i['assetPriceUSD']))
+		liquidity_units.append(float(i['liquidityUnits']))
+		rune_depth.append(float(i['runeDepth']))
 	data_output = [depth, price, price_usd, liquidity_units, rune_depth]
 	return data_output
 
@@ -77,4 +77,4 @@ def get_pools():
 	return req.get("{}/pools".format(midgard_link)).json()
 
 
-#print(pool_history("BNB.BNB", "day", "5"))
+#print(pool_history("BNB.BNB", "day", "5")[0])
