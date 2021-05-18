@@ -1,4 +1,4 @@
-var chart_data = {
+/* var chart_data = {
   labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   datasets: [{
     label: "Pool Depth",
@@ -28,7 +28,7 @@ var chart_data = {
     data: [32, 35, 33, 31, 29, 34, 35, 37, 36, 34],
   }
   ]
-};
+}; */
 
 
 
@@ -71,7 +71,7 @@ $('#py_test').click(function() {
 });
 
 
-function plot_it() {
+function plot_it(chart_data) {
   Chart.Line('test_chart', {
   options: options,
   data: chart_data
