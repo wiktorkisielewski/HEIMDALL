@@ -7,6 +7,10 @@
 canvas {
   border: none;
 }
-.heimdall_runes {
-	width: 10%;
+.top_bar_img {
+  height: 5vh;
+}
+.top_bar_text {
+  height: 4vh;
+  margin: 0.5vh;
 }

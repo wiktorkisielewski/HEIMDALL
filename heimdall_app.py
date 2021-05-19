@@ -5,7 +5,6 @@ import json
 
 app = Flask(__name__)
 
-
 time_intervals = ['5min', 'hour', 'day', 'week', 'month', 'year']
 
 ticker = 'ETH.SUSHI-0X6B3595068778DD592E39A122F4F5A5CF09C90FE2'
