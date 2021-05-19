@@ -18,16 +18,18 @@
   </div>
   <div> 
     <form method="post">
-      <select name="data.pools" method="GET" id="pool_tickers">
+      <select name="pool_select" method="GET">
         {% for pool in data.pools %}
         <option  value="{{pool}}">{{pool}}</option>"
         {% endfor %}
       </select>
-      <select name="data.intervals" method="GET">
+      <select name="interval_select" method="GET">
         {% for interval in data.intervals %}
         <option value="{{interval}}" SELECTED>{{interval}}</option>"
         {% endfor %}
       </select>
+      <input type="number" name="count_select"
+       min="10" max="100">
       <input type="submit">
     </form>
   </div>
