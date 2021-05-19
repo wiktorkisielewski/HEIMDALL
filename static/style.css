@@ -1,4 +1,4 @@
-body {
+* {
   background-color: #272727;
   color: #DFDFDF;
   font-size: 18px;
@@ -6,4 +6,7 @@ body {
 }
 canvas {
   border: none;
+}
+.heimdall_runes {
+	width: 10%;
 }

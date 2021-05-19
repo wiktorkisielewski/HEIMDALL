@@ -31,7 +31,7 @@ function py_test(input) {
 }
 
 $('#py_test').click(function() {
-  data = 'BNB.BNB';
+  data = '0';
   result = py_test(data);
   console.log('py_test ok' + data)
 });

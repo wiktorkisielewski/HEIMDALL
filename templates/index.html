@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body onload="plot_it({{data.dataset}})">
+  <header>
+    <img class="heimdall_runes" src="/static/images/heimdall_runes.png" alt="HEIMDALL">
+  </header>
   <canvas id="test_chart" width="200" height="450"></canvas>
   <div>
     <a href="/py_test">
@@ -29,7 +32,7 @@
         {% endfor %}
       </select>
       <input type="number" name="count_select"
-       min="10" max="100">
+       min="1" max="400" value="1">
       <input type="submit">
     </form>
   </div>
