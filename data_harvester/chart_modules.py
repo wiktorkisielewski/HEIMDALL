@@ -3,11 +3,11 @@ from data_harvester import api_requests
 def block_spawn(data):
   block = {
     'label': "Pool Depth",
-    'backgroundColor': "rgba(69, 176, 151, 0.78)",
-    'borderColor': "rgba(69, 176, 151, 0.78)",
+    'backgroundColor': "rgba(0, 0, 0, 0.0)",
+    'borderColor': "rgba(255, 255, 255, 0.8)",
     'borderWidth': 2,
-    'hoverBackgroundColor': "rgba(69, 176, 151, 0.78)",
-    'hoverBorderColor': "rgba(69, 176, 151, 0.78)",
+    'hoverBackgroundColor': "rgba(0, 0, 0, 0.0)",
+    'hoverBorderColor': "rgba(255, 255, 255, 1.0)",
     'data': data,
   }
   return block

@@ -1,11 +1,16 @@
 var options = {
   maintainAspectRatio: false,
+  elements: {
+    point:{
+        radius: 0
+    }
+  },
   scales: {
     yAxes: [{
       stacked: false,
       gridLines: {
         display: true,
-        color: "#54FFD855"
+        color: "#FFFFFF70"
       }
     }],
     xAxes: [{
@@ -16,7 +21,7 @@ var options = {
   },
   legend: {
       display: true,
-      position: "bottom"
+      position: "bottom",
     },
 };
 
@@ -38,6 +43,7 @@ $('#py_test').click(function() {
 
 
 function plot_it(chart_data) {
+  Chart.defaults.global.defaultFontColor="#FFFFFF90";
   Chart.Line('test_chart', {
   options: options,
   data: chart_data

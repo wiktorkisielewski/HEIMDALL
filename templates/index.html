@@ -11,10 +11,24 @@
 </head>
 <body onload="plot_it({{data.dataset}})">
   <header>
-    <img class="top_bar_img" src="/static/images/thorchain.png">
-    <img class="top_bar_text" src="/static/images/heimdall_runes.png" alt="HEIMDALL">
+    <a href="/">
+      <img class="top_bar_img" src="/static/images/thorchain.png">
+      <img class="top_bar_text" src="/static/images/heimdall_runes.png" alt="HEIMDALL">
+    </a>
+    <nav role="navigation">
+      <div id="menuToggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+          <a href="#"><li>Compare pools</li></a>
+          <a href="#"><li>Pool datails</li></a>
+        </ul>
+      </div>
+    </nav>
   </header>
-  <canvas id="test_chart" width="200" height="450"></canvas>
+  <canvas id="test_chart"></canvas>
   <div>
     <a href="/py_test">
       <button id="py_test">TEST</button>
